@@ -1,13 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Page — MP1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <nav class="navbar" aria-label="Primary">
+        <div class="container">
+          <a href="#hero" class="brand" aria-label="Go to top">OnePage</a>
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">☰</button>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#carousel" class="nav-link">Carousel</a></li>
+            <li><a href="#parallax" class="nav-link">Parallax</a></li>
+            <li><a href="#modal" class="nav-link">Modal</a></li>
+            <li><a href="#video" class="nav-link">Video</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <!-- hero: vertically centered content -->
+      <section id="hero" class="section hero" aria-label="Hero">
+        <div class="container hero__inner">
+          <h1 class="hero__title">Welcome to OnePage</h1>
+          <p class="hero__subtitle">A clean single-page website made with plain HTML, SCSS, and JS.</p>
+          <a href="#about" class="btn btn--primary">Learn More</a>
+        </div>
+        <div class="hero__bg" role="img" aria-label="Abstract background"></div>
+      </section>
+
+      <!-- about -->
+      <section id="about" class="section section--light" aria-label="About">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            This single-page website showcases common UI patterns: a sticky, resizing navbar with position indicator, smooth scrolling, a carousel, a fixed-background section, a modal, an embedded video, and responsive layouts.
+          </p>
+        </div>
+      </section>
+
+      <!-- features: Multi-column text -->
+      <section id="features" class="section section--muted" aria-label="Features">
+        <div class="container">
+          <h2>Features</h2>
+          <div class="multicol">
+            <p>
+              Responsive design ensures the layout adapts across common screen sizes. The navigation bar resizes as you scroll down. A scroll spy highlights your current section in the navbar.
+            </p>
+            <p>
+              The carousel demonstrates a simple slider with smooth transitions and accessible controls. The modal showcases layered UI and focus management. A fixed background section provides visual depth without heavy imagery or frameworks.
+            </p>
+            <p>
+              All styles are written in SCSS with variables, mixins, and keyframe animations. JavaScript is modular and minimal, using modern browser APIs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- carousel -->
+      <section id="carousel" class="section" aria-label="Carousel">
+        <div class="container">
+          <h2>Carousel</h2>
+          <div class="carousel" data-carousel>
+            <button class="carousel__control carousel__control--prev" aria-label="Previous slide" data-carousel-prev>‹</button>
+            <div class="carousel__viewport" aria-live="polite">
+              <div class="carousel__track" data-carousel-track>
+                <div class="carousel__slide" aria-roledescription="slide" aria-label="1 of 3">
+                  <div class="slide__inner">
+                    <h3>Slide One</h3>
+                    <p>Build with clean, semantic HTML.</p>
+                  </div>
+                </div>
+                <div class="carousel__slide" aria-roledescription="slide" aria-label="2 of 3">
+                  <div class="slide__inner">
+                    <h3>Slide Two</h3>
+                    <p>Style with SCSS variables and mixins.</p>
+                  </div>
+                </div>
+                <div class="carousel__slide" aria-roledescription="slide" aria-label="3 of 3">
+                  <div class="slide__inner">
+                    <h3>Slide Three</h3>
+                    <p>Enhance with small, focused JavaScript.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel__control carousel__control--next" aria-label="Next slide" data-carousel-next>›</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- parallax: fixed background image -->
+      <section id="parallax" class="section parallax" aria-label="Parallax background">
+        <div class="parallax__overlay">
+          <div class="container">
+            <h2>Fixed Background</h2>
+            <p>
+              This section uses a fixed-position background image for a subtle parallax effect.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- modal demo -->
+      <section id="modal" class="section section--light" aria-label="Modal Demo">
+        <div class="container">
+          <h2>Modal</h2>
+          <p>Click the button below to open a modal dialog.</p>
+          <button class="btn" data-open-modal>Open Modal</button>
+
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" data-modal>
+            <div class="modal__backdrop" data-close-modal></div>
+            <div class="modal__dialog" role="document">
+              <button class="modal__close" aria-label="Close" data-close-modal>×</button>
+              <h3 id="modal-title">Hello from the Modal</h3>
+              <p>
+                This is a simple modal window implemented with plain JavaScript and SCSS animations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- video -->
+      <section id="video" class="section" aria-label="Video">
+        <div class="container">
+          <h2>Video</h2>
+          <div class="video__frame">
+            <video controls preload="metadata" poster="assets/image.jpg">
+              <source src="assets/mp1_video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact (footer) -->
+      <section id="contact" class="section section--muted" aria-label="Contact">
+        <div class="container contact">
+          <h2>Get In Touch</h2>
+          <p>Find me on these platforms:</p>
+          <div class="social">
+            <a class="social__link" href="#" aria-label="GitHub" title="GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a class="social__link" href="https://www.linkedin.com/in/denver-soekawan/" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© <span id="year"></span> OnePage</p>
+      </div>
+    </footer>
+  </body>
+  </html>
